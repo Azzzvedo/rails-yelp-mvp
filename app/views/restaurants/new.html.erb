@@ -1,0 +1,14 @@
+<h1>Restaurants#new</h1>
+<p>Find me in app/views/restaurants/new.html.erb</p>
+
+<div class="container col-4">
+  <%= simple_form_for @restaurant do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.input :category, collection: Restaurant::CATEGORIES %>
+    <%= f.submit "Create new restaurant", class: "btn btn-primary mt-3" %>
+  <% end %>
+</div>
+
+<p><%= link_to 'Back to all restaurants', restaurants_path %></p>
