@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-  get 'reviews/create'
-  get 'reviews/new'
-  get 'restaurants/create'
-  get 'restaurants/new'
-  get 'restaurants/index'
-  get 'restaurants/show'
   resources :restaurants, only: %i[index show new create] do
-    resources :reviews, only: %i[new create]
+    resources :reviews, only: %i[create]
   end
 
   # # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
